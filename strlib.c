@@ -57,7 +57,7 @@ char *strncpy_ (char *dest, const char *src, size_t n)
 
 char *strcat_ (char *dest, const char *src)
 {
-    strcpy (strchr_ (dest, '\0'), src);
+    strcpy_ (strlen_ (dest) + dest, src);
 
     return dest;
 }
