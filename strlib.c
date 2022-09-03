@@ -26,7 +26,7 @@ char *strchr_ (const char *str, int sym)
 
 size_t strlen_ (const char *str)
 {
-    return strchr (str, '\0') - str;
+    return strchr_ (str, '\0') - str;
 }
 
 char *strcpy_ (char *dest, const char *src)
@@ -74,3 +74,34 @@ char *strncat_ (char *dest, const char *src, size_t n)
     dest[n - 1] = '\0';
     return dest;
 }
+
+char *fgets_ (char *str, int size, FILE *stream)
+{
+    int buffer = '\0';
+    size_t i = 0;
+
+    for (i = 0; (i < size - 1) && (buffer != EOF) && (buffer != '\n'); i++)
+    {
+        buffer = getc (stream);
+        str[i] = buffer;
+    }
+
+    if (buffer == EOF)
+    {
+        str[i - 1] = '\0';
+    }
+    else
+    {
+        str[i] = '\0';
+    }
+
+    if ((i < size - 1) && (buffer == EOF))
+    {
+        return NULL;
+    }
+    else
+    {
+        return str;
+    }
+}
+
