@@ -62,3 +62,15 @@ char *strcat_ (char *dest, const char *src)
     return dest;
 }
 
+char *strncat_ (char *dest, const char *src, size_t n)
+{
+    size_t dest_len = strlen_ (dest);
+    
+    if (n > dest_len)
+    {
+        strncpy_ (dest + dest_len, src, n - dest_len);
+    }
+
+    dest[n - 1] = '\0';
+    return dest;
+}

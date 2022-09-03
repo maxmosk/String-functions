@@ -16,5 +16,7 @@ char *strncpy_ (char *dest, const char *src, size_t n);
 
 char *strcat_ (char *dest, const char *src);
 
+char *strncat_ (char *dest, const char *src, size_t n);
+
 #endif
 
