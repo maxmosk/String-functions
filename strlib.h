@@ -4,15 +4,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int puts (const char *str);
+int puts_ (const char *str);
 
-char *strchr (const char *str, int sym);
+char *strchr_ (const char *str, int sym);
 
-size_t strlen (const char *str);
+size_t strlen_ (const char *str);
 
-char *strcpy (char *dest, const char *src);
+char *strcpy_ (char *dest, const char *src);
 
-char *strncpy (char *dest, const char *src, size_t n);
+char *strncpy_ (char *dest, const char *src, size_t n);
+
+char *strcat_ (char *dest, const char *src);
 
 #endif
 

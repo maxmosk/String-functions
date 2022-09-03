@@ -1,6 +1,6 @@
 #include "strlib.h"
 
-int puts (const char *str)
+int puts_ (const char *str)
 {
     int status = EOF;
 
@@ -16,7 +16,7 @@ int puts (const char *str)
     return putchar ('\n');
 }
 
-char *strchr (const char *str, int sym)
+char *strchr_ (const char *str, int sym)
 {
     for (; (*str != '\0') && (*str != sym); str++)
         ;
@@ -24,12 +24,12 @@ char *strchr (const char *str, int sym)
     return (*str == sym) ? str : NULL;
 }
 
-size_t strlen (const char *str)
+size_t strlen_ (const char *str)
 {
-    return strchr (str, '\0') - str - 1;
+    return strchr (str, '\0') - str;
 }
 
-char *strcpy (char *dest, const char *src)
+char *strcpy_ (char *dest, const char *src)
 {
     char *desttmp = dest;
 
@@ -39,11 +39,11 @@ char *strcpy (char *dest, const char *src)
     return desttmp;
 }
 
-char *strncpy (char *dest, const char *src, size_t n)
+char *strncpy_ (char *dest, const char *src, size_t n)
 {
     size_t i = 0;
 
-    for (; (i < n) && (src[i] != '\0'); i++)
+    for (i = 0; (i < n) && (src[i] != '\0'); i++)
     {
         dest[i] = src[i];
     }
@@ -51,6 +51,13 @@ char *strncpy (char *dest, const char *src, size_t n)
     {
         dest[i] = '\0';
     }
+
+    return dest;
+}
+
+char *strcat_ (char *dest, const char *src)
+{
+    strcpy (strchr_ (dest, '\0'), src);
 
     return dest;
 }
