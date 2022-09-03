@@ -16,3 +16,12 @@ int puts (const char *str)
     return putchar ('\n');
 }
 
+char *strchr (const char *str, int sym)
+{
+    for (; (*str != '\0') && (*str != sym); str++)
+        ;
+
+    return (*str == sym) ? str : NULL;
+}
+
+

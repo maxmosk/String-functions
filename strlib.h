@@ -6,5 +6,7 @@
 
 int puts (const char *str);
 
+char *strchr (const char *str, int sym);
+
 #endif
 
