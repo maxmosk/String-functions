@@ -29,3 +29,13 @@ size_t strlen (const char *str)
     return strchr (str, '\0') - str - 1;
 }
 
+char *strcpy (char *dest, const char *src)
+{
+    char *desttmp = dest;
+
+    while ((*dest++ = *src++) != '\0')
+        ;
+
+    return desttmp;
+}
+
