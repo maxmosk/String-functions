@@ -105,3 +105,15 @@ char *fgets_ (char *str, int size, FILE *stream)
     }
 }
 
+char *strdup_ (const char *str)
+{
+    char *newstr = calloc (strlen_ (str) + 1, sizeof str[0]);
+    if (newstr == NULL)
+    {
+        errno = ENOMEM;
+        return NULL;
+    }
+
+    return strcpy_ (newstr, str);
+}
+

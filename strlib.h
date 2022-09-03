@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 
 int puts_ (const char *str);
 
@@ -19,6 +20,8 @@ char *strcat_ (char *dest, const char *src);
 char *strncat_ (char *dest, const char *src, size_t n);
 
 char *fgets_ (char *str, int size, FILE *stream);
+
+char *strdup_ (const char *str);
 
 #endif
 
