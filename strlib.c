@@ -24,4 +24,8 @@ char *strchr (const char *str, int sym)
     return (*str == sym) ? str : NULL;
 }
 
+size_t strlen (const char *str)
+{
+    return strchr (str, '\0') - str - 1;
+}
 
